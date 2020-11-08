@@ -5,12 +5,13 @@ import jsonlines
 from flask import request
 from inspektor import app
 
+IP_DIR = os.environ.get("IP_DIR")
+
 
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
 def index(path):
-    dirname = os.path.dirname(__file__)
-    ip_files = os.path.join(dirname, "ips/ips.jsonl")
+    ip_files = os.path.join(IP_DIR, "ips.jsonl")
 
     honey = {request.remote_addr: {k: v for k, v in request.headers}}
     date = datetime.now().strftime("%Y-%m-%d")
