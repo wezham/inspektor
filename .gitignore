@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 .idea/*
-requests/*.jsonl
+requests/ips.jsonl
 # C extensions
 *.so
 
