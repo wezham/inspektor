@@ -17,6 +17,6 @@ RUN pip3 install -r requirements.txt \
     && pip3 install .
 
 EXPOSE 8000
-WORKDIR /usr/src/inspektor
+RUN ls
 ENV IP_DIR=/usr/src/requests
-CMD ["uwsgi", "--emperor", "--ini", "inspektor.ini"]
+CMD ["uwsgi", "--emperor", "--ini", "./src/inspektor/inspektor.ini"]
